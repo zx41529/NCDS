@@ -11,10 +11,10 @@ def CrossEntropy(outputs, targets):
     return -(log_softmax_outputs*softmax_targets).sum(dim=1).mean()
 
 
-class SameclassConLoss(nn.Module):
+class SameclassLoss(nn.Module):
     def __init__(self, temperature=0.07, contrast_mode='all',
                  base_temperature=0.07, device=None):
-        super(SameclassConLoss, self).__init__()
+        super(SameclassLoss, self).__init__()
         self.temperature = temperature
         self.contrast_mode = contrast_mode
         self.base_temperature = base_temperature
@@ -108,7 +108,7 @@ class SameclassConLoss(nn.Module):
         loss = loss.view(anchor_count, batch_size).mean()
         return loss
 
-def simsiamLoss(p, z, version='simplified'): # negative cosine similarity
+def samesourceLoss(p, z, version='simplified'): # negative cosine similarity
     if version == 'original':
         z = z.detach() # stop gradient
         p = F.normalize(p, dim=1) # l2-normalize 
