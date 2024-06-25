@@ -1,5 +1,5 @@
 # NCDS 
-COMING SOON !
+More codes are coming soon!
 
 ![NCDS_framwork](framwork.png)
 
@@ -7,5 +7,5 @@ COMING SOON !
 
 ## TODO :white_check_mark:
 
-- [x] Provide frameworks and same-class loss codes
+- [x] Provide models and loss codes
 - [ ] Provide training and testing codes
